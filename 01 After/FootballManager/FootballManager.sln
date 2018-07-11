@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballManager", "FootballManager\FootballManager.csproj", "{1777E185-C60A-4A01-A5B1-78F3C6315DD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballManager.UnitTests", "FootballManager.UnitTests\FootballManager.UnitTests.csproj", "{6F7508AE-9370-43F2-A592-2A9307A75A49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
