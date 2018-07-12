@@ -1,3 +1,4 @@
+using Moq;
 using Xunit;
 
 namespace FootballManager.UnitTests
@@ -7,7 +8,12 @@ namespace FootballManager.UnitTests
         [Fact]
         public void ApproveYoungCheapPlayerTransfer()
         {
-            var approval = new TransferApproval(null);
+            Mock<IPhysicalExamination> mockExamination = new Mock<IPhysicalExamination>();
+
+            mockExamination.Setup(x => 
+                x.IsHealthy(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>())).Returns(true);
+
+            var approval = new TransferApproval(mockExamination.Object);
 
             var emreTransfer = new TransferApplication
             {
@@ -29,7 +35,11 @@ namespace FootballManager.UnitTests
         [Fact]
         public void ReferredToBossWhenTransferringSuperStart()
         {
-            var approval = new TransferApproval(null);
+            Mock<IPhysicalExamination> mockExamination = new Mock<IPhysicalExamination>();
+
+            mockExamination.Setup(x => x.IsHealthy(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>())).Returns(true);
+
+            var approval = new TransferApproval(mockExamination.Object);
 
             var cr7Transfer = new TransferApplication
             {
