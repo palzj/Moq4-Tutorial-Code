@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FootballManager
+﻿namespace FootballManager
 {
     public class TransferApproval
     {
@@ -10,14 +8,13 @@ namespace FootballManager
 
         public TransferApproval(IPhysicalExamination physicalExamination)
         {
-            _physicalExamination = physicalExamination 
-                ?? throw new ArgumentNullException(nameof(physicalExamination));
+            _physicalExamination = physicalExamination;
         }
 
         public TransferResult Evaluate(TransferApplication transfer)
         {
-            _physicalExamination
-                .IsHealthy(transfer.PlayerAge, transfer.PlayerStrength, transfer.PlayerSpeed, out var isHealthy);
+            var isHealthy = _physicalExamination
+                .IsHealthy(transfer.PlayerAge, transfer.PlayerStrength, transfer.PlayerSpeed);
 
             if(!isHealthy)
             {
